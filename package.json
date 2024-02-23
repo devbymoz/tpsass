@@ -1,0 +1,14 @@
+{
+  "name": "maquette_sistematic",
+  "version": "1.0.0",
+  "description": "TP utilisation de SASS",
+  "main": "index.js",
+  "scripts": {
+    "run": "sass src/assets/scss/main.scss src/assets/css/main.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  }
+}
