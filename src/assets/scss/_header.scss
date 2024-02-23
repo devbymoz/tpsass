@@ -1,0 +1,51 @@
+@use "variables";
+
+@font-face {
+    font-family: gobold_thin-webfont;
+    src: url(./../fonts/gobold_thin-webfont.woff);
+}
+
+.header {
+    background: variables.$colorBackground;
+    padding: 25px 30px;
+    height: 88px;
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.header__logo {
+    img {
+        max-width: 250px;
+        height: 56px;
+    }
+    p {
+        font-family: gobold_thin-webfont;
+        color: variables.$colorSecondary;
+    }
+}
+
+
+.header__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    nav i {
+        color: variables.$colorSecondaryDark;
+        font-size: 38px;
+    }
+    .header__left__social {
+        max-height: 52px;
+    }
+    .header__left__rechercher {
+        max-height: 24px;
+    }
+    button {
+        @include variables.primaryButton()
+    }
+    :not(:last-child) {
+        border-right: 2px solid variables.$colorBorder;
+        border-right: 4px solid red;
+        padding-right: 50px;
+    }
+}
+

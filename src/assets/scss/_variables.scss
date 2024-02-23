@@ -1,9 +1,69 @@
 /* COULEURS */
 $colorPrimary: #e6007e;
 $colorSecondary: #02618f;
+$colorSecondaryDark: #0e395b;
 $colorTitle: #013b68;
 $colorParagraph: #646464;
 $colorFooterBackground: #26272b;
+$colorBorder: #e7e7e7;
+$colorBackground: #fff;
 
+$color: #819ad2;
+
+
+$container : 1300px;
+
+/* BOUTONS */
+@mixin primaryButton() {
+    background-color: $colorPrimary;
+    border-radius: 50px;
+    color: #FFF;
+    padding: 16px 30px;
+    font-size: 17px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: fit-content;
+}
+
+@mixin secondaryButton($background) {
+    background-color: $background;
+    border-radius: 8px;
+    color: #FFF;
+    padding: 8px 6px;
+    border: none;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-top: 12px;
+}
+
+@mixin border() {
+    border-bottom: 1px solid $colorBorder;
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+}
+
+@mixin border-color($colorBorderLeft) {
+    border: 1px solid $colorBorder;
+    border-radius: 0 8px 8px 0 ;
+    padding: 14px 15px;
+    margin-bottom: 16px;
+    border-left: 6px solid $colorBorderLeft;
+}
+
+
+/* TITRES */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    color: $colorSecondaryDark;
+}
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: $colorSecondaryDark;
+}
 
 

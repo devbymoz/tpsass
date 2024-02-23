@@ -1,0 +1,121 @@
+@use "variables";
+
+main {
+    max-width: variables.$container;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+/* EVENEMENT */ 
+.left__events {
+    @include variables.border-color(variables.$colorSecondary);
+    ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    li {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: variables.$colorSecondaryDark;
+    }
+    li::before {
+        content: "c";
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        color: variables.$colorSecondaryDark;
+    }
+    span {
+        color: variables.$colorParagraph;
+    }
+    button {
+        @include variables.primaryButton();
+    }
+}
+
+/* HUB & ENJEUx */
+.hub_enjeux {
+    @include variables.border();
+    p {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: variables.$colorSecondaryDark;
+    }
+    button {
+        @include variables.secondaryButton(variables.$colorSecondary);
+    }
+}
+
+.whats-on {
+    width: 100%;
+}
+
+.description {
+    @include variables.border();
+    margin: 20px 0;
+    p:first-child {
+        color: variables.$colorSecondaryDark;
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    span  {
+        color: variables.$colorPrimary;
+        font-weight: bold;
+    }
+}
+
+
+.tags {
+    font-weight: bold;
+    span {
+        color: variables.$colorPrimary;
+        font-style: oblique;
+    }
+}
+
+.inscription {
+    margin: 40px 0;
+    padding: 40px 50px;
+    background-color: variables.$colorPrimary;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    p {
+        color: #fff;
+    }
+    .inscription__right__titre {
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    button {
+        @include variables.primaryButton();
+        background-color: #fff;
+        color: variables.$colorPrimary;
+    }
+}
+
+.map {
+    width: 100%;
+    @include variables.border();
+}
+
+.share {
+    margin: 10px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: bold;
+    p {
+        color: variables.$colorSecondaryDark;
+    }
+}

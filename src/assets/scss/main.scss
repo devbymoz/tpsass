@@ -1,4 +1,36 @@
+@use "variables";
+@use "header";
+@use "carrousel";
+@use "section-left";
+@use "section-right";
+@use "footer";
 
-h1::before {
-    content: 'Hello World';
+
+@font-face {
+    font-family: malgun;
+    src: url(./../fonts/malgun.ttf);
+}
+
+body {
+    //background-color: black;
+    //padding: 0 150px;
+    margin: 0;
+    font-family: malgun;
+}
+
+
+p {
+    margin:0;
+    color: variables.$colorParagraph;
+    line-height: 28px;
+    font-size: 19px;
+}
+
+main {
+    background: variables.$colorBackground;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }

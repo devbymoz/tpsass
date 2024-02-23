@@ -1,0 +1,8 @@
+@use "variables";
+
+.carrousel {
+    background-image: url('./../images/banniere.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 440px;
+}

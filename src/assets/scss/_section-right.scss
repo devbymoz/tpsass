@@ -1,0 +1,43 @@
+@use "variables";
+
+
+.right__title {
+    @include variables.border();
+    font-size: 22px;
+    &::before {
+        content: url("./../images/Ellipse.png");
+        margin-right: 5px;
+    }
+}
+
+
+.month__change-month {
+    display: flex;
+    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        height: 37px;
+    }
+}
+.month {
+    margin-bottom: 60px;
+}
+
+.month__events {
+    @include variables.border-color(variables.$colorSecondary);
+    p {
+        color: variables.$colorSecondaryDark;
+        font-weight: bold;
+    }
+    span {
+        color: variables.$colorParagraph;
+    }
+}
+
+
+.hub-enjeux button:not(:first-child) {
+    @include variables.secondaryButton(red);
+    display: flex;
+    flex-direction: column;
+}
