@@ -1,0 +1,41 @@
+@use "variables";
+
+/* BOUTONS */
+/* Bouton principal */
+@mixin primaryButton() {
+    background-color: variables.$colorPrimary;
+    border-radius: 50px;
+    color: #FFF;
+    padding: 16px 30px;
+    font-size: 17px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: fit-content;
+}
+/* Bouton secondaire */
+@mixin secondaryButton($background) {
+    background-color: $background;
+    border-radius: 6px;
+    color: #FFF;
+    padding: 6px 8px;
+    border: none;
+    width: fit-content;
+    margin-top: 12px;
+}
+
+/* BORDURE */
+/* Bordure de séparation */
+@mixin border() {
+    border-bottom: 1px solid variables.$colorBorder;
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+}
+/* Bordure de couleur */
+@mixin border-color($colorBorderLeft) {
+    border: 1px solid variables.$colorBorder;
+    border-radius: 0 8px 8px 0 ;
+    padding: 14px 15px;
+    margin-bottom: 16px;
+    border-left: 6px solid $colorBorderLeft;
+}

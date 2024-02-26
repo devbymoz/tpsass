@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixins";
 
 main {
     max-width: variables.$container;
@@ -7,10 +8,14 @@ main {
     grid-template-columns: 2fr 1fr;
     gap: 50px;
 }
+.left {
+    border-right: 1px solid variables.$colorBorder;
+    padding-right: 50px;
+}
 
 /* EVENEMENT */ 
 .left__events {
-    @include variables.border-color(variables.$colorSecondary);
+    @include mixins.border-color(variables.$colorSecondary);
     ul {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -23,7 +28,9 @@ main {
         color: variables.$colorSecondaryDark;
     }
     li::before {
-        content: "c";
+        content: "\f111";
+        font-family: "Font Awesome 6 Free";
+        font-size: 12px;
         margin-right: 5px;
         width: 20px;
         height: 20px;
@@ -33,29 +40,35 @@ main {
         color: variables.$colorParagraph;
     }
     button {
-        @include variables.primaryButton();
+        @include mixins.primaryButton();
+    }
+    p {
+        font-size: 12px;
+        font-style: oblique;
+        text-transform: none;
     }
 }
 
 /* HUB & ENJEUx */
 .hub_enjeux {
-    @include variables.border();
+    @include mixins.border();
     p {
         text-transform: uppercase;
         font-weight: bold;
         color: variables.$colorSecondaryDark;
     }
     button {
-        @include variables.secondaryButton(variables.$colorSecondary);
+        @include mixins.secondaryButton(variables.$colorSecondary);
     }
 }
 
+/* Image whats-on */
 .whats-on {
     width: 100%;
 }
 
 .description {
-    @include variables.border();
+    @include mixins.border();
     margin: 20px 0;
     p:first-child {
         color: variables.$colorSecondaryDark;
@@ -69,7 +82,6 @@ main {
     }
 }
 
-
 .tags {
     font-weight: bold;
     span {
@@ -78,6 +90,7 @@ main {
     }
 }
 
+/* Bannière rose d'inscription */
 .inscription {
     margin: 40px 0;
     padding: 40px 50px;
@@ -89,7 +102,7 @@ main {
     p {
         color: #fff;
     }
-    .inscription__right__titre {
+    .inscription__right {
         font-size: 28px;
         text-transform: uppercase;
         font-weight: bold;
@@ -98,7 +111,7 @@ main {
         gap: 10px;
     }
     button {
-        @include variables.primaryButton();
+        @include mixins.primaryButton();
         background-color: #fff;
         color: variables.$colorPrimary;
     }
@@ -106,7 +119,7 @@ main {
 
 .map {
     width: 100%;
-    @include variables.border();
+    @include mixins.border();
 }
 
 .share {

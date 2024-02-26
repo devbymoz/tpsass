@@ -1,5 +1,7 @@
 @use "variables";
+@use "mixins";
 
+/* Police pour le texte sous le logo */
 @font-face {
     font-family: gobold_thin-webfont;
     src: url(./../fonts/gobold_thin-webfont.woff);
@@ -16,22 +18,24 @@
 .header__logo {
     img {
         max-width: 250px;
-        height: 56px;
+        height: 57px;
     }
     p {
         font-family: gobold_thin-webfont;
         color: variables.$colorSecondary;
+        font-size: 16px;
+        line-height: 10px;
     }
 }
-
 
 .header__left {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
+    position: relative;
     nav i {
         color: variables.$colorSecondaryDark;
-        font-size: 38px;
+        font-size: 34px;
     }
     .header__left__social {
         max-height: 52px;
@@ -39,13 +43,24 @@
     .header__left__rechercher {
         max-height: 24px;
     }
+
     button {
-        @include variables.primaryButton()
+        @include mixins.primaryButton();
     }
+
+    div::after,
+    nav::after {
+        content: " ";
+        position: absolute;
+        border-right: 1px solid variables.$colorBorder;
+        top: 50%;
+        height: 70%;
+        bottom: 50%;
+        margin: auto 0;
+        padding-left: 40px;
+    }
+
     :not(:last-child) {
-        border-right: 2px solid variables.$colorBorder;
-        border-right: 4px solid red;
-        padding-right: 50px;
+        padding-right: 80px;
     }
 }
-

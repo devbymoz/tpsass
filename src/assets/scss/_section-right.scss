@@ -1,15 +1,14 @@
 @use "variables";
-
+@use "mixins";
 
 .right__title {
-    @include variables.border();
-    font-size: 22px;
+    @include mixins.border();
+    font-size: 20px;
     &::before {
         content: url("./../images/Ellipse.png");
         margin-right: 5px;
     }
 }
-
 
 .month__change-month {
     display: flex;
@@ -25,7 +24,7 @@
 }
 
 .month__events {
-    @include variables.border-color(variables.$colorSecondary);
+    @include mixins.border-color(variables.$colorSecondary);
     p {
         color: variables.$colorSecondaryDark;
         font-weight: bold;
@@ -33,11 +32,48 @@
     span {
         color: variables.$colorParagraph;
     }
+    &.month__events2 {
+        @include mixins.border-color(#7d9dd2);
+    }
+    &.month__events3 {
+        @include mixins.border-color(#701145);
+    }
+    &.month__events4 {
+        @include mixins.border-color(#006bb3);
+    }
+    &.month__events5 {
+        @include mixins.border-color(#819ad2);
+    }
 }
 
-
 .hub-enjeux button:not(:first-child) {
-    @include variables.secondaryButton(red);
     display: flex;
     flex-direction: column;
+    &:nth-child(2) {
+        @include mixins.secondaryButton(#76a2d9);
+    }
+    &:nth-child(3) {
+        @include mixins.secondaryButton(#3991d1);
+    }
+    &:nth-child(4) {
+        @include mixins.secondaryButton(#094484);
+    }
+    &:nth-child(5) {
+        @include mixins.secondaryButton(#006ab5);
+    }
+    &:nth-child(6) {
+        @include mixins.secondaryButton(#016588);
+    }
+    &:nth-child(7) {
+        @include mixins.secondaryButton(#2e7f9e);
+    }
+    &:nth-child(8) {
+        @include mixins.secondaryButton(#701145);
+    }
+    &:nth-child(9) {
+        @include mixins.secondaryButton(#701145);
+    }
+    &:nth-child(10) {
+        @include mixins.secondaryButton(#a2446b);
+    }
 }

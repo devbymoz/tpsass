@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixins";
 
 .footer {
     background: variables.$colorFooterBackground;
@@ -13,7 +14,7 @@
     max-width: variables.$container;
     margin-left: auto;
     margin-right: auto;
-    border-bottom:  1px solid #55565a;
+    border-bottom: 1px solid variables.$colorBorderFooter;
     padding-bottom: 50px;
 }
 
@@ -32,11 +33,12 @@
     .formulaire {
         display: flex;
         align-items: center;
+        justify-content: end;
         button {
-            @include variables.primaryButton()
+            @include mixins.primaryButton();
         }
         input {
-            width: 280px;
+            width: 240px;
             height: 30px;
             border: none;
             border-bottom: 3px solid variables.$colorPrimary;
@@ -46,7 +48,7 @@
             text-transform: uppercase;
             font-size: 20px;
             color: #fff;
-          }
+        }
     }
 }
 
@@ -63,12 +65,55 @@
     }
 }
 
-
 .footer__bottom {
     max-width: variables.$container;
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    p {
+        color: #0bb1b6;
+        font-size: 14px;
+    }
+    span {
+        color: #afac9a;
+    }
+}
+
+.footer__bottom__link ul {
+    display: flex;
+    margin: 0;
+    li a {
+        color: #d1d1d1;
+        margin-right: 10px;
+        text-decoration: none;
+    }
+}
+
+/* Bordure de séparation du footer */
+.border-separate::after {
+    content: " ";
+    border: 1px solid variables.$colorBorderFooter;
+    width: 0;
+    height: 100%;
+    margin: 0 30px;
+}
+
+/* Bouton de retour en haut de la page */
+.footer__sticky__sticky-top {
+    background-color: variables.$colorPrimary;
+    height: 45px;
+    width: 45px;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    i {
+        position: relative;
+        font-size: 20px;
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }

@@ -4,33 +4,46 @@
 @use "section-left";
 @use "section-right";
 @use "footer";
+@use "mixins";
 
-
+/* Formatage de la page */
 @font-face {
     font-family: malgun;
     src: url(./../fonts/malgun.ttf);
 }
 
 body {
-    //background-color: black;
-    //padding: 0 150px;
     margin: 0;
     font-family: malgun;
 }
-
-
-p {
-    margin:0;
-    color: variables.$colorParagraph;
-    line-height: 28px;
-    font-size: 19px;
-}
-
 main {
     background: variables.$colorBackground;
 }
 
+p {
+    margin: 0;
+    color: variables.$colorParagraph;
+    line-height: 28px;
+    font-size: 19px;
+}
 ul {
     list-style-type: none;
     padding: 0;
+}
+
+/* TITRES */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    color: variables.$colorSecondaryDark;
+}
+h3 {
+    color: variables.$colorSecondaryDark;
+}
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: variables.$colorSecondaryDark;
 }
